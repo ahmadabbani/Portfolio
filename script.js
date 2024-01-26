@@ -95,7 +95,6 @@ ScrollReveal().reveal('.home-list dt', {interval: 500, delay:800});
 ScrollReveal().reveal('.home-list dd', {interval: 500, delay:800});
 ScrollReveal().reveal('.home-img', {distance: '300px', origin: 'left', duration: 2000});
 ScrollReveal().reveal('.home-infos', {distance: '400px', origin: 'right', duration: 2000});
-ScrollReveal().reveal('.home-socials', {opacity: 0, delay:2000,  duration: 2000});
 
 /***************Hello**********************/
 ScrollReveal().reveal('.section-title', {distance: '200px', duration: 1500, origin: 'left', viewFactor: 0.8});
@@ -103,8 +102,8 @@ ScrollReveal().reveal('.hello-details', {distance: '300px',  duration: 1500, ori
 ScrollReveal().reveal('.button-flex', {distance: '100px', duration: 1000, origin: 'bottom'});
 
 /***************Services**********************/
-ScrollReveal().reveal('.services-item:nth-child(1), .services-item:nth-child(3)', {distance: '300px', viewFactor: 0.35, origin: 'left', duration: 1000});
-ScrollReveal().reveal('.services-item:nth-child(2), .services-item:nth-child(4)', {distance: '300px', viewFactor: 0.35, origin: 'right', duration: 1000});
+ScrollReveal().reveal('.services-item:nth-child(1), .services-item:nth-child(3)', {distance: '200px', viewFactor: 0.35, origin: 'left', duration: 1000});
+ScrollReveal().reveal('.services-item:nth-child(2), .services-item:nth-child(4)', {distance: '200px', viewFactor: 0.35, origin: 'right', duration: 1000});
 
 /***************Skills**********************/
 ScrollReveal().reveal('.skills-title', {distance: '200px', origin: 'left', viewFactor:1});
