@@ -93,29 +93,29 @@ contactForm.addEventListener('submit', sendEmail);
 /***************Home**********************/
 ScrollReveal().reveal('.home-list dt', {interval: 500, delay:800});
 ScrollReveal().reveal('.home-list dd', {interval: 500, delay:800});
-ScrollReveal().reveal('.home-img', { display: 'none', distance: '300px', origin: 'left', duration: 2000});
-ScrollReveal().reveal('.home-infos', {display: 'none', distance: '400px', origin: 'right', duration: 2000});
+ScrollReveal().reveal('.home-img', {distance: '150px', origin: 'left', duration: 2000});
+ScrollReveal().reveal('.home-infos', {distance: '150px', origin: 'right', duration: 2000});
 
 /***************Hello**********************/
-ScrollReveal().reveal('.section-title', { display: 'none', distance: '200px', duration: 1500, origin: 'left', viewFactor: 0.8});
-ScrollReveal().reveal('.hello-details', {display: 'none', distance: '300px',  duration: 1500, origin: 'right', viewFactor: 0.8});
-ScrollReveal().reveal('.button-flex', {display: 'none', distance: '100px', duration: 1000, origin: 'bottom'});
+ScrollReveal().reveal('.section-title', {distance: '100px', duration: 1500, origin: 'left', viewFactor: 0.8});
+ScrollReveal().reveal('.hello-details', {distance: '100px',  duration: 1500, origin: 'right', viewFactor: 0.8});
+ScrollReveal().reveal('.button-flex', {distance: '100px', duration: 1000, origin: 'bottom'});
 
 /***************Services**********************/
-ScrollReveal().reveal('.services-item:nth-child(1), .services-item:nth-child(3)', { display: 'none', distance: '200px', viewFactor: 0.35, origin: 'left', duration: 1000});
-ScrollReveal().reveal('.services-item:nth-child(2), .services-item:nth-child(4)', {display:'none', distance: '200px', viewFactor: 0.35, origin: 'right', duration: 1000});
+ScrollReveal().reveal('.services-item:nth-child(1), .services-item:nth-child(3)', {distance: '100px', viewFactor: 0.35, origin: 'left', duration: 2000});
+ScrollReveal().reveal('.services-item:nth-child(2), .services-item:nth-child(4)', {distance: '100px', viewFactor: 0.35, origin: 'right', duration: 2000});
 
 /***************Skills**********************/
-ScrollReveal().reveal('.skills-title', {display: 'none', distance: '200px', origin: 'left', viewFactor:1});
-ScrollReveal().reveal('.skills-data', {display: 'none', distance: '200px', origin: 'left', viewFactor:1, interval: 500});
+ScrollReveal().reveal('.skills-title', {distance: '100px', origin: 'left', viewFactor:1});
+ScrollReveal().reveal('.skills-data', {distance: '200px', origin: 'left', viewFactor:1, interval: 500});
 
 /***************Work**********************/
 ScrollReveal().reveal('.work-item', {scale: 0.5, viewFactor:0.5});
 
 /***************Contact**********************/
-ScrollReveal().reveal('.contact-info', {display: 'none', distance: '200px', origin: 'left', viewFactor: 0.4, duration: 2000});
+ScrollReveal().reveal('.contact-info', {distance: '100px', origin: 'left', viewFactor: 0.4, duration: 2000});
 ScrollReveal().reveal('.contact-socials li', {interval: 500, delay:500});
-ScrollReveal().reveal('.contact-form', {display: 'none', distance: '200px', origin: 'right', viewFactor: 0.4, duration: 2000});
+ScrollReveal().reveal('.contact-form', {distance: '100px', origin: 'right', viewFactor: 0.4, duration: 2000});
 
 
 
