@@ -16,6 +16,7 @@ html{
 
 body, button, input, textarea{
     font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
 }
 
 h1, h2, h3{
@@ -365,6 +366,10 @@ margin-bottom: 2.5rem;
     background: linear-gradient(45deg, blue, #6188af);
 }
 
+.skill6{
+    background: linear-gradient(45deg, rgb(0, 0, 0), #ff5f03);
+}
+
 .skills-name{
     background-clip: text;
     color: transparent;
@@ -393,12 +398,10 @@ margin-bottom: 2.5rem;
 
 .work-container{
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 1rem;
-    column-gap: 0.5rem;
+    row-gap: 1.5rem;
 }
 
 .work-item{
-    border: 1px solid gray;
     padding-top: 1rem;
     padding-bottom: 1rem;
     display: flex;
@@ -406,8 +409,9 @@ margin-bottom: 2.5rem;
     align-items: center;
     row-gap: 1rem;
     border-radius: 15px;
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
+    box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 8px 0 10px -5px rgba(0, 0, 0, 0.2);
 }
 
 .work-content{
