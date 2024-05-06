@@ -149,7 +149,7 @@
             <div class="skills-list grid">
               <div class="skills-data">
                 <div class="skills-titles">
-                  <p class="skills-name text-sm skill1">HTML</p>
+                  <p class="skills-name text-sm skill1">HTML/CSS</p>
                   <span class="skills-number text-sm">95%</span>
                 </div>
                 <div class="skills-bar">
@@ -158,16 +158,7 @@
               </div>
               <div class="skills-data">
                 <div class="skills-titles">
-                  <p class="skills-name text-sm skill2">CSS</p>
-                  <span class="skills-number text-sm">95%</span>
-                </div>
-                <div class="skills-bar">
-                  <span class="skills-percentage" style="width: 95%"></span>
-                </div>
-              </div>
-              <div class="skills-data">
-                <div class="skills-titles">
-                  <p class="skills-name text-sm skill3">BOOTSTRAP</p>
+                  <p class="skills-name text-sm skill2">BOOTSTRAP/Chakra UI</p>
                   <span class="skills-number text-sm">85%</span>
                 </div>
                 <div class="skills-bar">
@@ -176,7 +167,7 @@
               </div>
               <div class="skills-data">
                 <div class="skills-titles">
-                  <p class="skills-name text-sm skill4">JAVASCRIPT</p>
+                  <p class="skills-name text-sm skill3">JAVASCRIPT</p>
                   <span class="skills-number text-sm">80%</span>
                 </div>
                 <div class="skills-bar">
@@ -185,7 +176,7 @@
               </div>
               <div class="skills-data">
                 <div class="skills-titles">
-                  <p class="skills-name text-sm skill5">REACT</p>
+                  <p class="skills-name text-sm skill4">REACT</p>
                   <span class="skills-number text-sm">75%</span>
                 </div>
                 <div class="skills-bar">
@@ -194,7 +185,7 @@
               </div>
               <div class="skills-data">
                 <div class="skills-titles">
-                  <p class="skills-name text-sm skill6">
+                  <p class="skills-name text-sm skill5">
                     MYSQL/MONGOdb/Firebase
                   </p>
                   <span class="skills-number text-sm">75%</span>
@@ -205,7 +196,7 @@
               </div>
               <div class="skills-data">
                 <div class="skills-titles">
-                  <p class="skills-name text-sm skill7">Git/Github</p>
+                  <p class="skills-name text-sm skill6">Git/Github</p>
                   <span class="skills-number text-sm">70%</span>
                 </div>
                 <div class="skills-bar">
@@ -220,6 +211,40 @@
       <section class="work section container" id="portfolio">
         <h2 class="section-title">Work</h2>
         <div class="work-container grid">
+          <div class="work-item">
+            <div class="image-box">
+              <img
+                src="Images/SM-project.png"
+                alt="SM-project"
+                class="work-img"
+              />
+            </div>
+            <div class="work-content">
+              <h3 class="work-title text-sm">React+Firebase social media</h3>
+              <p class="work-details text-sm">
+                The application features a robust authentication system,
+                enabling users to register and log in securely. This system is
+                built using Firebase’s authentication services, ensuring the
+                security and integrity of user data. The application also
+                includes protected routes, ensuring that only authenticated
+                users can access certain parts of the application. The
+                application leverages Firebase Firestore, a real-time NoSQL
+                database, for data storage and retrieval. This allows for the
+                creation of new user accounts and the ability to log in existing
+                users. The real-time capabilities of Firestore enable instant
+                updates across all active clients, enhancing the interactivity
+                of the application. The application is designed using Chakra UI,
+                a simple, modular, and accessible component library.
+              </p>
+              <a
+                href=" https://react-social-media-c4fc7.web.app
+                        "
+                class="work-link button"
+                >Live Preview
+                <i class="ri-circle-fill" style="color: rgb(92, 240, 124)"></i
+              ></a>
+            </div>
+          </div>
           <div class="work-item">
             <div class="image-box">
               <img src="Images/project0.png" alt="project0" class="work-img" />
@@ -256,35 +281,28 @@
             <div class="work-content">
               <h3 class="work-title text-sm">Full Stack Management System</h3>
               <p class="work-details text-sm">
-                The “Full Stack Management System” is a comprehensive solution
-                designed to streamline administrative tasks and enhance data
-                management. It’s built with robust authentication mechanisms,
-                allowing secure login as an admin or employee using tokens and
-                JWT. To ensure privacy and safety, the system also incorporates
-                password hashing techniques, further enhancing the security of
-                user data. The system is connected to a MySQL database on the
-                server side, enabling efficient data management. It allows
-                adding, retrieving, and deleting information from the database
-                seamlessly. The system also has the capability to create email
-                users and reset passwords, further enhancing its functionality.
-                The platform features separate login pages for admins and
-                employees. Admins have the ability to create new users and
-                employees, edit information, delete, and search for employees
-                using information from the database. A modern dashboard displays
-                various information from the database, such as salaries,
-                employee categories, and more. This makes it a versatile tool
-                for managing and viewing critical data. The technologies used in
-                this project include React on the client side, Node.js with the
-                Express framework on the server side, and MySQL for the backend.
-                The “Full Stack Management System” is a testament to the power
-                of modern web technologies in creating efficient and secure
-                management systems.
+                It’s built with robust authentication mechanisms, allowing
+                secure login as an admin or employee using tokens and JWT. To
+                ensure privacy and safety, the system also incorporates password
+                hashing techniques, further enhancing the security of user data.
+                The system is connected to a MySQL database on the server side.
+                It allows adding, retrieving, and deleting information from the
+                database seamlessly. The system also has the capability to
+                create email users and reset passwords. The platform features
+                separate login pages for admins and employees. Admins have the
+                ability to create new users and employees, edit information,
+                delete, and search for employees using information from the
+                database. A modern dashboard displays various information from
+                the database, such as salaries, employee categories, and more.
+                The technologies used in this project include React on the
+                client side, Node.js with the Express framework on the server
+                side, and MySQL for the backend.
               </p>
               <a
-                href="#
+                href="#portfolio
                         "
                 class="work-link button"
-                >To be hosted soon!
+                >To be deployed soon!
                 <i class="ri-circle-fill" style="color: rgb(182, 182, 182)"></i
               ></a>
             </div>
