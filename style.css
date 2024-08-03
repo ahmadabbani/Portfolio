@@ -92,6 +92,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 100;
+    box-shadow: 0 5px 8px 0 rgb(0 0 0 / 12%);
     transition: 0.3s;
 }
 
@@ -168,6 +169,7 @@ nav {
     background-color: rgb(43, 40, 40);
     padding-top: 6rem;
     margin-bottom: 2.5rem;
+
 }
 
 .home-container {
@@ -223,9 +225,12 @@ nav {
 .home-social-link {
     margin-right: 1rem;
     font-size: 1.5rem;
-    opacity: 0.5;
+    opacity: 0.6;
+    padding: 0.45rem;
     transition: 0.4s;
     color: gray;
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.9);
 }
 
 .home-social-link:hover {
@@ -306,6 +311,7 @@ nav {
     padding: 1.3rem 1.5rem;
     text-align: center;
     position: relative;
+    border-radius: 12px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -579,7 +585,17 @@ nav {
 }
 
 /****************MEDIA QUERIES*************/
+
+@media screen and (min-width: 768px) and (max-width: 1130px) {
+    .home {
+        height: 55vh;
+    }
+}
+
 @media screen and (max-width: 767.98px) {
+    .home {
+        height: 115vh;
+    }
 
     .nav-menu {
         position: fixed;
@@ -632,7 +648,7 @@ nav {
 
     .home-img {
         width: 50%;
-        transform: translateY(0);
+        transform: translateY(0) !important;
         display: flex;
         justify-self: center;
     }
@@ -675,7 +691,17 @@ nav {
 
 }
 
+@media screen and (max-width: 590px) {
+    .home {
+        height: 105vh;
+    }
+}
+
 @media screen and (max-width: 470px) {
+    .home {
+        height: 100vh;
+    }
+
     .home-name {
         font-size: 2.5rem;
     }
