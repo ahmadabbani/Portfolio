@@ -393,6 +393,10 @@ nav {
 }
 
 .skill6 {
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(1, 218, 1));
+}
+
+.skill7 {
     background: linear-gradient(45deg, rgb(0, 0, 0), #ff5f03);
 }
 
