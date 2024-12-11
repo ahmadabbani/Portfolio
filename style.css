@@ -321,10 +321,16 @@ nav {
     text-align: center;
     position: relative;
     border-radius: 12px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgb(105, 105, 105);
+    box-shadow: 6px 6px 0px rgb(105, 105, 105);
+    transition: 0.4s ease;
 }
 
-.services-item::after {
+.services-item:hover {
+    box-shadow: 6px -6px 0px rgb(105, 105, 105);
+}
+
+/*.services-item::after {
     content: '';
     background-color: #dbdbdb;
     position: absolute;
@@ -334,12 +340,12 @@ nav {
     height: 0;
     transition: 0.4s;
     z-index: -1;
-}
+}*/
 
-.services-item:hover::after {
+/*.services-item:hover::after {
     left: 0;
     height: 100%;
-}
+}*/
 
 .icon-box {
     margin-bottom: 0.8rem;
