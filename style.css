@@ -379,31 +379,35 @@ nav {
 }
 
 .skill1 {
-    background: linear-gradient(45deg, #000000, #ff9b3d);
+    background: linear-gradient(45deg, #F8BBD0, #9C4E97);
 }
 
 .skill2 {
-    background: linear-gradient(45deg, rgb(223, 81, 223), #00db80);
+    background: linear-gradient(45deg, #4CAF50, #1DE9B6);
 }
 
 .skill3 {
-    background: linear-gradient(45deg, rgb(255, 136, 0), rgb(237, 241, 0));
+    background: linear-gradient(45deg, #FFB300, #F57C00);
 }
 
 .skill4 {
-    background: linear-gradient(45deg, blue, #6193c5);
+    background: linear-gradient(45deg, #0059ff, #411f9e);
 }
 
 .skill5 {
-    background: linear-gradient(45deg, rgb(82, 82, 82), rgb(1, 218, 1), #ff5f03);
+    background: linear-gradient(45deg, #6A1B9A, #9C4D97);
 }
 
 .skill6 {
-    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(1, 218, 1));
+    background: linear-gradient(45deg, #388E3C, #66BB6A);
 }
 
 .skill7 {
-    background: linear-gradient(45deg, rgb(0, 0, 0), #ff5f03);
+    background: linear-gradient(45deg, #FFA500, #D32F2F);
+}
+
+.skill8 {
+    background: linear-gradient(45deg, #00Aaff, #004F8C);
 }
 
 .skills-name {
@@ -427,9 +431,77 @@ nav {
     background-color: rgb(116, 116, 116);
 }
 
+.flex-skills {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .skills-title {
     letter-spacing: 0.5rem;
     margin-bottom: 1.8rem;
+}
+
+.skills-icons {
+    display: flex;
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.skill-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+.vercel-icon,
+.render-icon {
+    width: 60px;
+    height: 20px;
+    border-radius: 0;
+}
+
+.netlify-icon {
+    width: 70px;
+    height: 30px;
+    border-radius: 0;
+}
+
+
+@keyframes floatIcon {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Add different delay for each icon to create a wave effect */
+.skills-icons img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.skills-icons img:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.skills-icons img:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.skills-icons img:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.skills-icons img:nth-child(5) {
+    animation-delay: 2s;
 }
 
 /********************PROJECTS*****************/
@@ -735,6 +807,29 @@ nav {
         width: 30px;
         height: 30px;
     }
+
+    .skills-icons {
+        gap: 6px;
+    }
+
+    .skill-icon {
+        width: 25px;
+        height: 25px;
+        border-radius: 2px;
+    }
+
+    .vercel-icon,
+    .render-icon {
+        width: 50px;
+        height: 15px;
+
+    }
+
+    .netlify-icon {
+        width: 50px;
+        height: 30px;
+
+    }
 }
 
 @media screen and (max-width: 470px) {
@@ -759,4 +854,11 @@ nav {
         object-fit: contain;
     }
 
+}
+
+@media screen and (max-width: 425px) {
+
+    .skills-icons {
+        flex-wrap: wrap;
+    }
 }
