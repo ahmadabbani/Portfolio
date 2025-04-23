@@ -330,6 +330,11 @@ nav {
     box-shadow: 6px -6px 0px rgb(105, 105, 105);
 }
 
+.services-item:hover .icon-box i {
+    transform: rotate3d(0, 1, 0, 180deg);
+    transition: 0.4s ease;
+}
+
 /*.services-item::after {
     content: '';
     background-color: #dbdbdb;
@@ -354,8 +359,13 @@ nav {
 .icon-box i {
     display: block;
     font-size: 2rem;
-    width: fit-content;
-    height: fit-content;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 100%;
+    border: 2px solid rgb(128, 128, 128);
     color: gray;
     padding: 0;
     margin: 0 auto;
@@ -576,6 +586,7 @@ nav {
     font-size: clamp(0.8rem, 1.5rem, 3.4vw);
     text-align: center;
     line-height: 1.5rem;
+    color: #333;
 }
 
 .work-details {
