@@ -133,6 +133,67 @@ ScrollReveal().reveal(".button-flex", {
   origin: "bottom",
 });
 
+/******************Counter Animation******************/
+const counters = document.querySelectorAll(".counter-number");
+
+const animateCounters = () => {
+  counters.forEach((counter) => {
+    const updateCount = () => {
+      const target = +counter.getAttribute("data-target");
+      const count = +counter.innerText.replace("+", "");
+      const increment = target / 200;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment) + "+"; // Add "+" here
+        setTimeout(updateCount, 80);
+      } else {
+        counter.innerText = target + "+"; // Ensure "+" is added when target is reached
+      }
+    };
+    updateCount();
+  });
+};
+
+const counterSection = document.getElementById("counter");
+const observer = new IntersectionObserver(
+  (entries) => {
+    if (entries[0].isIntersecting) {
+      animateCounters();
+      observer.disconnect();
+    }
+  },
+  { threshold: 0.5 }
+);
+
+observer.observe(counterSection);
+
+ScrollReveal().reveal(".counter-item:nth-child(1)", {
+  distance: "50px",
+  origin: "bottom",
+  duration: 2000,
+  delay: 200, // Delay for the first item
+  opacity: 0,
+  viewFactor: 0.1,
+});
+
+ScrollReveal().reveal(".counter-item:nth-child(2)", {
+  distance: "50px",
+  origin: "bottom",
+  duration: 2000,
+  delay: 400, // Delay for the second item
+  opacity: 0,
+  viewFactor: 0.1,
+});
+
+ScrollReveal().reveal(".counter-item:nth-child(3)", {
+  distance: "50px",
+  origin: "bottom",
+  duration: 2000,
+  delay: 600, // Delay for the third item
+  opacity: 0,
+  viewFactor: 0.1,
+});
+
 /***************Services**********************/
 ScrollReveal().reveal(
   ".services-item:nth-child(1), .services-item:nth-child(3)",
