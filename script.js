@@ -144,10 +144,10 @@ const animateCounters = () => {
       const increment = target / 200;
 
       if (count < target) {
-        counter.innerText = Math.ceil(count + increment) + "+"; // Add "+" here
+        counter.innerText = Math.ceil(count + increment) + "+";
         setTimeout(updateCount, 80);
       } else {
-        counter.innerText = target + "+"; // Ensure "+" is added when target is reached
+        counter.innerText = target + "+";
       }
     };
     updateCount();
