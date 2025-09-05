@@ -193,7 +193,154 @@ ScrollReveal().reveal(".counter-item:nth-child(3)", {
   opacity: 0,
   viewFactor: 0.1,
 });
+// Advanced liquid mouse effect for home section
+const homeSection = document.querySelector(".home");
+const liquidBlobs = document.querySelectorAll(".liquid-blob");
+const liquidTrails = document.querySelectorAll(".liquid-trail");
 
+let mouseX = 0;
+let mouseY = 0;
+let isMouseInSection = false;
+let trailHistory = [];
+const maxTrails = 5;
+
+homeSection.addEventListener("mousemove", (e) => {
+  const rect = homeSection.getBoundingClientRect();
+  mouseX = e.clientX - rect.left;
+  mouseY = e.clientY - rect.top;
+  isMouseInSection = true;
+
+  trailHistory.unshift({ x: mouseX, y: mouseY, time: Date.now() });
+  if (trailHistory.length > maxTrails) {
+    trailHistory.pop();
+  }
+
+  updateLiquidEffect();
+});
+
+homeSection.addEventListener("mouseleave", () => {
+  isMouseInSection = false;
+  liquidBlobs.forEach((blob) => (blob.style.opacity = "0"));
+  liquidTrails.forEach((trail) => (trail.style.opacity = "0"));
+  trailHistory = [];
+});
+
+function updateLiquidEffect() {
+  if (!isMouseInSection) return;
+
+  liquidBlobs.forEach((blob, index) => {
+    const delay = index * 50;
+    const offsetX =
+      (index - 2) * 40 + Math.sin(Date.now() * 0.002 + index) * 20;
+    const offsetY =
+      (index - 2) * 30 + Math.cos(Date.now() * 0.003 + index) * 15;
+
+    setTimeout(() => {
+      blob.style.opacity = "0.8";
+      blob.style.left = mouseX - blob.offsetWidth / 2 + offsetX + "px";
+      blob.style.top = mouseY - blob.offsetHeight / 2 + offsetY + "px";
+
+      const speed = getMouseSpeed();
+      const morphScale = 1 + speed * 0.001;
+      blob.style.transform = `scale(${morphScale}) rotate(${
+        Date.now() * 0.1 + index * 45
+      }deg)`;
+    }, delay);
+  });
+
+  liquidTrails.forEach((trail, index) => {
+    if (trailHistory[index]) {
+      const trailData = trailHistory[index];
+      const age = Date.now() - trailData.time;
+      const opacity = Math.max(0, 0.5 - age * 0.001);
+
+      trail.style.opacity = opacity;
+      trail.style.left = trailData.x - trail.offsetWidth / 2 + "px";
+      trail.style.top = trailData.y - trail.offsetHeight / 2 + "px";
+
+      const scale = 1 - age * 0.0005;
+      trail.style.transform = `scale(${Math.max(0.1, scale)})`;
+    }
+  });
+}
+
+let lastMousePos = { x: 0, y: 0 };
+let mouseSpeed = 0;
+
+function getMouseSpeed() {
+  const deltaX = mouseX - lastMousePos.x;
+  const deltaY = mouseY - lastMousePos.y;
+  mouseSpeed = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+  lastMousePos = { x: mouseX, y: mouseY };
+  return mouseSpeed;
+}
+
+let liquidAnimation;
+homeSection.addEventListener("mouseenter", () => {
+  liquidAnimation = setInterval(() => {
+    if (!isMouseInSection) return;
+
+    liquidBlobs.forEach((blob, index) => {
+      const time = Date.now() * 0.001;
+      const waveX = Math.sin(time + index * 1.5) * 15;
+      const waveY = Math.cos(time * 1.2 + index * 2) * 10;
+
+      const currentTransform = blob.style.transform || "";
+      if (currentTransform.includes("translate")) {
+        blob.style.transform = currentTransform.replace(
+          /translate\([^)]+\)/,
+          `translate(${waveX}px, ${waveY}px)`
+        );
+      } else {
+        blob.style.transform =
+          currentTransform + ` translate(${waveX}px, ${waveY}px)`;
+      }
+
+      const morph1 = 30 + Math.sin(time * 2 + index) * 20;
+      const morph2 = 40 + Math.cos(time * 1.5 + index) * 25;
+      const morph3 = 50 + Math.sin(time * 1.8 + index) * 15;
+      const morph4 = 35 + Math.cos(time * 2.2 + index) * 30;
+
+      blob.style.borderRadius = `${morph1}% ${morph2}% ${morph3}% ${morph4}% / ${morph2}% ${morph3}% ${morph1}% ${morph4}%`;
+    });
+  }, 60);
+});
+
+homeSection.addEventListener("mouseleave", () => {
+  if (liquidAnimation) clearInterval(liquidAnimation);
+});
+
+// Click ripple effect
+homeSection.addEventListener("click", (e) => {
+  if (!isMouseInSection) return;
+
+  const ripple = document.createElement("div");
+  ripple.style.cssText = `
+        position: absolute;
+        left: ${mouseX - 50}px;
+        top: ${mouseY - 50}px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 2;
+        animation: liquidRipple 1s ease-out forwards;
+    `;
+
+  document.querySelector(".liquid-mouse-effect").appendChild(ripple);
+  setTimeout(() => ripple.remove(), 1000);
+});
+
+// Add ripple animation
+const style = document.createElement("style");
+style.textContent = `
+    @keyframes liquidRipple {
+        0% { transform: scale(0); opacity: 0.8; }
+        100% { transform: scale(4); opacity: 0; }
+    }
+`;
+document.head.appendChild(style);
 /***************Services**********************/
 ScrollReveal().reveal(
   ".services-item:nth-child(1), .services-item:nth-child(3)",
